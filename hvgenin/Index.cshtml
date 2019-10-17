@@ -1,0 +1,54 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvgenin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HVGenin[0].GeninName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVGenin[0].GeninTeam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVGenin[0].GeninCNature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVGenin[0].GVillages)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HVGenin) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeninName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeninTeam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeninCNature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GVillages.HVID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

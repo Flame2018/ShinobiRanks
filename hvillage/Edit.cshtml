@@ -1,0 +1,45 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvillage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HVillage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HVillage.HVID" />
+            <div class="form-group">
+                <label asp-for="HVillage.HVName" class="control-label"></label>
+                <input asp-for="HVillage.HVName" class="form-control" />
+                <span asp-validation-for="HVillage.HVName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVillage.HVTerrain" class="control-label"></label>
+                <input asp-for="HVillage.HVTerrain" class="form-control" />
+                <span asp-validation-for="HVillage.HVTerrain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVillage.KageType" class="control-label"></label>
+                <input asp-for="HVillage.KageType" class="form-control" />
+                <span asp-validation-for="HVillage.KageType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

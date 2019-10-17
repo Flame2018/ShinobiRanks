@@ -1,0 +1,54 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvkage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HVKage[0].KageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVKage[0].KageChakraNature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVKage[0].KVillage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVKage[0].KVillages)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HVKage) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KageChakraNature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KVillage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KVillages.HVID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.KID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.KID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.KID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

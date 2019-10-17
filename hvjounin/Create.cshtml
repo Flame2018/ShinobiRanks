@@ -1,0 +1,48 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvjounin.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>HVJounin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HVJounin.JouninName" class="control-label"></label>
+                <input asp-for="HVJounin.JouninName" class="form-control" />
+                <span asp-validation-for="HVJounin.JouninName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVJounin.JouninCNature" class="control-label"></label>
+                <input asp-for="HVJounin.JouninCNature" class="form-control" />
+                <span asp-validation-for="HVJounin.JouninCNature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVJounin.ATeam" class="control-label"></label>
+                <input asp-for="HVJounin.ATeam" class="form-control" />
+                <span asp-validation-for="HVJounin.ATeam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVJounin.HVID" class="control-label"></label>
+                <select asp-for="HVJounin.HVID" class ="form-control" asp-items="ViewBag.HVID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

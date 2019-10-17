@@ -1,0 +1,54 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvscrolls.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HVScrolls[0].SName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVScrolls[0].HVScroll)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVScrolls[0].SContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVScrolls[0].Villages)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HVScrolls) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HVScroll)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Villages.HVID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VSID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.VSID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VSID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

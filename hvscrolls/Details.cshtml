@@ -1,0 +1,43 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvscrolls.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>HVScrolls</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HVScrolls.SName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HVScrolls.SName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HVScrolls.HVScroll)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HVScrolls.HVScroll)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HVScrolls.SContent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HVScrolls.SContent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.HVScrolls.Villages)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.HVScrolls.Villages.HVID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.HVScrolls.VSID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

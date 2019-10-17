@@ -1,0 +1,54 @@
+﻿@page
+@model ShinobiRanks1._0.Pages.hvchuunin.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HVChuunin[0].ChuuninName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVChuunin[0].Team)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVChuunin[0].ChuuninCNature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVChuunin[0].CVillages)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HVChuunin) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChuuninName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChuuninCNature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CVillages.HVID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
